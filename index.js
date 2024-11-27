@@ -1,20 +1,17 @@
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 
-const express=require("express")
-const connectDB=require('./db.js')
-const itemModel=require('./models/item.js')
-const cors=require("cors")
-const app=express()
-app.use(express.json)
-app.use(cors)
-
-app.get('/',async(req,res)=>{
-    const response=await itemModel.find()
-    return res.json({items:express.response})
-})
-
-connectDB()
-
-app.listen(3000,()=>{
-    console.log("App is running");
-})
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
